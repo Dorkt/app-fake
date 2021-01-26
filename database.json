@@ -1,19 +1,6 @@
 {
   "users": [
     {
-      "id": "y478l69zaci",
-      "first_name": "Kallie",
-      "last_name": "Kemmer",
-      "email": "Ryley.Schaefer@yahoo.com",
-      "address": {
-        "street": "Jamie Overpass",
-        "zip_code": "06247-3692",
-        "city": "Joeyborough",
-        "number": 439,
-        "state": "Pennsylvania"
-      }
-    },
-    {
       "id": "ao9c90mvze",
       "first_name": "Carroll",
       "last_name": "MacGyver",
