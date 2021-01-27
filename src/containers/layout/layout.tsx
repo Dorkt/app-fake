@@ -16,7 +16,7 @@ import * as LayoutActions from '../../store/ducks/layout/actions'
 
 const drawerWidth = 240;
 
-const Styles = (theme: Theme) => createStyles({
+const Styles = (theme: Theme): any => createStyles({
     root: {},
     displayFlex: {
         display: 'flex',
