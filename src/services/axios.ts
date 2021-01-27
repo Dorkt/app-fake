@@ -11,7 +11,7 @@ class ConfigAxios {
             baseURL: 'http://localhost:3001',
             httpsAgent: new Agent({ rejectUnauthorized: false })
         })
-        
+
         this.configResponseInterceptors()
     }
 
