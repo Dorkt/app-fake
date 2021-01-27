@@ -9,9 +9,11 @@ import rootReducer from './ducks/root.reducer'
 import rootSaga from './ducks/root.sagas'
 
 import { ILayoutState } from './ducks/layout/types'
+import { IUserState } from './ducks/user/types'
 
 export interface IApplicationState {
     layout: ILayoutState,
+    Users: IUserState
 }
 
 export const history = createBrowserHistory()
