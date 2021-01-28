@@ -28,7 +28,8 @@ class UserService {
         }
         return axiosInstace.get(`/users`, { params })
         .then(response => {
-            return { data: response.data.data, headers: response.headers }
+            console.log("Service", response.data)
+            return { data: response.data, headers: response.headers }
         })
     }
 

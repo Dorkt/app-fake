@@ -38,7 +38,7 @@ export const findUserSucess = (user: User) => action(UserActionTypes.FIND_SUCESS
 export const findUserFailure = (error: ErrorEvent) => action(UserActionTypes.FIND_FAILURE, { error })
 
 /* Actions for Load User */
-export const loadUsersRequest = (paginator?: IPaginator) => action(UserActionTypes.LOAD_USERS_SUCESS, { paginator })
+export const loadUsersRequest = (paginator?: IPaginator) => action(UserActionTypes.LOAD_USERS_REQUEST, { paginator })
 
 export const loadUsersSucess = (response: IAxiosResponse<User[]>) => action(UserActionTypes.LOAD_USERS_SUCESS, {
     users: response.data,

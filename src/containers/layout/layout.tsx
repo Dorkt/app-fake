@@ -135,7 +135,7 @@ class Layout extends Component<Props, { drawer: boolean }> {
                             <MenuIcon />
                         </IconButton>
                         <Typography variant="h6" noWrap>
-                            Persistent drawer
+                            Lista de usuários
                   </Typography>
                     </Toolbar>
                 </AppBar>
