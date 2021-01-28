@@ -48,7 +48,11 @@ class ListAdmins extends Component<Props> {
             users
         } = this.props
         console.log('users', users)
-        return <div />
+        return <div>
+            {users.map((user) => {
+                return <li>{user.first_name}</li>
+            })}
+        </div>
     }
 }
 
