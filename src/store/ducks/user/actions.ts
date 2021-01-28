@@ -59,6 +59,9 @@ export const updateUserFailure = (error: ErrorEvent) => action(UserActionTypes.U
 
 export const removeUserRequest = (usedIdForRemove: string) => action(UserActionTypes.REMOVE_REQUEST, { usedIdForRemove })
 
-export const removeUserSucess = () => action(UserActionTypes.REMOVE_SUCESS, {})
+export const removeUserSucess = () => [
+    action(UserActionTypes.REMOVE_SUCESS, {}),
+    loadUsersRequest()
+]
 
 export const removeUSerFailure = (error: ErrorEvent) => action(UserActionTypes.REMOVE_FAILURE, { error })
