@@ -13,7 +13,7 @@ import { IUserState } from './ducks/user/types'
 
 export interface IApplicationState {
     layout: ILayoutState,
-    Users: IUserState
+    users: IUserState
 }
 
 export const history = createBrowserHistory()
