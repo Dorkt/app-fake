@@ -9,7 +9,16 @@ export default class User extends Default {
     private _phone: string | undefined
     private _birth_date: string | undefined
     private _address: Address | undefined
-    
+
+    /**
+     * TODO Inicialização do tipo Objeto
+     * Contructor() {} adicionado pois é do tipo Object (Address)
+     * Apesar de também ser do tipo undefined é interessante inicializar com o tipo
+     */
+    constructor() {
+        super()
+        this._address = new Address()
+    }
 
     get first_name(): string | undefined {
         return this._first_name
@@ -24,20 +33,21 @@ export default class User extends Default {
     }
 
     set last_name(value: string | undefined) {
+        // TODO first_name ??
         this._first_name = value
     }
 
     get email(): string | undefined {
         return this._email
     }
-    
+
     set email(value: string | undefined) {
         this._email = value
     }
 
     get phone(): string | undefined {
         return this._phone
-    }    
+    }
 
     set phone(value: string | undefined) {
         this._phone = value
@@ -62,27 +72,28 @@ export default class User extends Default {
     public fromJSON(json: any): User {
         super.fromJSON(json)
 
-        if(json.first_name !== undefined){
+        // TODO * refatorar (Exemplo na classe Default)
+        if (json.first_name !== undefined) {
             this.first_name = json.first_name
         }
 
-        if(json.last_name !== undefined) {
+        if (json.last_name !== undefined) {
             this.last_name = json.last_name
         }
 
-        if(json.email !== undefined) {
+        if (json.email !== undefined) {
             this.email = json.email
         }
 
-        if(json.phone !== undefined) {
+        if (json.phone !== undefined) {
             this.phone = json.phone
         }
 
-        if(json.birth_date !== undefined) {
+        if (json.birth_date !== undefined) {
             this.birth_date = json.birth_date
         }
 
-        if(json.address !== undefined) {
+        if (json.address !== undefined) {
             this.address = new Address().fromJSON(json.address)
         }
 

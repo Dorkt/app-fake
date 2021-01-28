@@ -20,6 +20,9 @@ interface IDispatchProps extends RouteComponentProps<any> {
 
     changePaginator(paginator: IPaginator): void
 
+    /**
+     * TODO A action tem que ser exatamente igual está no arquivo de actions
+     */
     changeRemoveDialog(visibilityModal: boolean, userIdForRemove: string): void
 
     removeUserRequest(userIdForRemove: string): void
@@ -47,6 +50,7 @@ class ListAdmins extends Component<Props> {
         const {
             users
         } = this.props
+        // TODO remover consoles
         console.log('users', users)
         return <div>
             {users.map((user) => {

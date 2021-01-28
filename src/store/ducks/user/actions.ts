@@ -64,4 +64,5 @@ export const removeUserSucess = () => [
     loadUsersRequest()
 ]
 
+// TODO removeUserFailure
 export const removeUSerFailure = (error: ErrorEvent) => action(UserActionTypes.REMOVE_FAILURE, { error })

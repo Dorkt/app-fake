@@ -82,6 +82,13 @@ const reducer: Reducer<IUserState> = (state: IUserState = INITIAL_STATE, action:
                 }
             }
 
+        /**
+         * TODO padronizar
+         * const { error: createError } = action.payload
+         * O exemplo a cima muda o nome do error (payload) para createError
+         * Apenas para os payloads com o mesmo nome
+         * Perguntar em caso de dúvida
+         */
         case UserActionTypes.CREATE_FAILURE:
             const createError = action.payload.error
             return {

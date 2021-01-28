@@ -5,7 +5,9 @@ import { IPaginator } from '../../store/ducks/root.types'
 import Address from '../../store/application/models/users/address'
 
 class UserService {
-
+    /**
+     * TODO configurar corretamente todas as rotas
+     */
     public create(newUser: User) {
         return axiosInstace.post(`/user/create`, newUser)
         return axiosInstace.post(`/gym/user/create`, newUser?.toJSON)
@@ -28,6 +30,7 @@ class UserService {
         }
         return axiosInstace.get(`/users`, { params })
         .then(response => {
+            // TODO remover consoles
             console.log("Service", response.data)
             return { data: response.data, headers: response.headers }
         })
