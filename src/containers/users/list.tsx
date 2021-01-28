@@ -8,6 +8,27 @@ import { IApplicationState } from '../../store'
 import * as UserActions from '../../store/ducks/user/actions'
 import { IPaginator, ISearch } from '../../store/ducks/root.types'
 
+/* Importações do material-ui */
+import { WithStyles, Theme, createStyles, makeStyles, withStyles } from '@material-ui/core/styles'
+import Table from '@material-ui/core/Table'
+import TableBody from '@material-ui/core/TableBody'
+import TableCell from '@material-ui/core/TableCell'
+import TableContainer from '@material-ui/core/TableContainer'
+import TableHead from '@material-ui/core/TableHead'
+import Papper from '@material-ui/core/Paper'
+
+const StyledTableCell = withStyles((theme: Theme) => 
+    createStyles({
+        head: {
+            backgroundColor: theme.palette.common.black,
+            color: theme.palette.common.white,
+        },
+        body: {
+            fontSize: 16,
+        },
+    }),
+)(TableCell)
+
 interface IState {
     readonly users: User[]
     readonly loading: boolean
