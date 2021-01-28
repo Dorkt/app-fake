@@ -1,9 +1,11 @@
-import React, { Suspense } from 'react'
+import React, { lazy, Suspense } from 'react'
 import { Redirect, Route, RouteProps, Switch } from 'react-router-dom'
 import { ConnectedRouter } from 'connected-react-router'
 
 import Layout from '../containers/layout/layout'
 import { CircularProgress } from '@material-ui/core'
+
+const ListUsers = lazy(() => import('../containers/users/list'))
 
 interface PrivateRouteProps extends RouteProps {
     key?: number
@@ -51,13 +53,12 @@ const routes = [
     {
         path: '/app',
         strict: true,
-        private: true,
         component: Layout,
         routes: [
             {
                 path: '/app/main',
                 exact: true,
-                private: true,
+                component: ListUsers
             }
         ]
     },

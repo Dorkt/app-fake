@@ -37,9 +37,9 @@ export const INITIAL_STATE: IUserState = {
 }
 
 const reducer: Reducer<IUserState> = (state: IUserState = INITIAL_STATE, action: any) => {
-    switch(action.type) {
+    switch (action.type) {
         case UserActionTypes.RESET_CREATE_USER:
-            return {...state, createUser: INITIAL_STATE.createUser }
+            return { ...state, createUser: INITIAL_STATE.createUser }
 
         case UserActionTypes.CHANGE_USER:
             const { user } = action.payload
@@ -59,7 +59,7 @@ const reducer: Reducer<IUserState> = (state: IUserState = INITIAL_STATE, action:
                     ...state.listUsers,
                     loading: true,
                     paginator
-                }             
+                }
             }
 
         case UserActionTypes.CHANGE_REMOVE_DIALOG:
@@ -68,9 +68,9 @@ const reducer: Reducer<IUserState> = (state: IUserState = INITIAL_STATE, action:
                 ...state,
                 removeUser: { ...state.removeUser, visibilityModal, userIdForRemove }
             }
-            
+
         case UserActionTypes.CREATE_REQUEST:
-            return { ...state, createUser: { ...state.createUser, loading: true }}
+            return { ...state, createUser: { ...state.createUser, loading: true } }
 
         case UserActionTypes.CREATE_SUCESS:
             return {
@@ -81,7 +81,7 @@ const reducer: Reducer<IUserState> = (state: IUserState = INITIAL_STATE, action:
                     sucess: true,
                 }
             }
-        
+
         case UserActionTypes.CREATE_FAILURE:
             const createError = action.payload.error
             return {
@@ -93,7 +93,7 @@ const reducer: Reducer<IUserState> = (state: IUserState = INITIAL_STATE, action:
                 }
             }
 
-        case UserActionTypes.FIND_REQUEST:            
+        case UserActionTypes.FIND_REQUEST:
             return {
                 ...state,
                 createUser: {
@@ -104,7 +104,7 @@ const reducer: Reducer<IUserState> = (state: IUserState = INITIAL_STATE, action:
 
         case UserActionTypes.FIND_SUCESS:
             const findUser = action.payload.user
-            return{
+            return {
                 ...state,
                 createUser: {
                     ...state.createUser,
@@ -112,7 +112,7 @@ const reducer: Reducer<IUserState> = (state: IUserState = INITIAL_STATE, action:
                     loading: false
                 }
             }
-            
+
         case UserActionTypes.FIND_FAILURE:
             const findError = action.payload.error
             return {
@@ -136,7 +136,7 @@ const reducer: Reducer<IUserState> = (state: IUserState = INITIAL_STATE, action:
             }
 
         case UserActionTypes.LOAD_USERS_SUCESS:
-            const { users: { data: daousers }, headers } = action.payload
+            const { users, headers } = action.payload
             return {
                 ...state,
                 listUsers: {
@@ -144,15 +144,14 @@ const reducer: Reducer<IUserState> = (state: IUserState = INITIAL_STATE, action:
                     loading: false,
                     sucess: true,
                     error: false,
-                    users: daousers,
+                    users,
                     paginator: {
-                        ...state.listUsers.paginator,
-                        totalRecords: parseInt(headers['x-total-count'], 10)
+                        ...state.listUsers.paginator
                     }
                 }
             }
 
-        case UserActionTypes.LOAD_USERS_FAILURE: 
+        case UserActionTypes.LOAD_USERS_FAILURE:
             return {
                 ...state,
                 listUsers: {
@@ -162,8 +161,8 @@ const reducer: Reducer<IUserState> = (state: IUserState = INITIAL_STATE, action:
                 }
             }
 
-        default: 
-            return state        
+        default:
+            return state
     }
 }
 

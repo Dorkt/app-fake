@@ -37,22 +37,17 @@ type Props = IState & IDispatchProps
 
 class ListAdmins extends Component<Props> {
 
+    constructor(props: Props) {
+        super(props)
+        const { loadUsersRequest, paginator } = this.props
+        loadUsersRequest(paginator)
+    }
+
     public render() {
         const {
-            users,
-            loading,
-            error,
-            paginator,
-            changePaginator,
-            removeUserRequest,
-            loadUsersRequest,
-            history,
-            location,
-            match,
-            changeUser,
-            changeRemoveDialog,
+            users
         } = this.props
-
+        console.log('users', users)
         return <div />
     }
 }
