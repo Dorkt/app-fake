@@ -16,29 +16,30 @@ class UserService {
         return axiosInstace.get(`/user/${userId}`)
     }
 
-    public getAll(paginator?: IPaginator){
+    public getAll(paginator?: IPaginator) {
         const params = new URLSearchParams()
-        if(paginator) {
-            if(paginator.page === 0) {
+        if (paginator) {
+            if (paginator.page === 0) {
                 params.append('page', String(paginator.page + 1))
             }
 
-            if(paginator.rows) {
+            if (paginator.rows) {
                 params.append('limit', String(paginator.rows))
             }
         }
         return axiosInstace.get(`/users`, { params })
-        .then(response => {
-            return { data: response.data, headers: response.headers }
-        })
+            .then(response => {
+                return { data: response.data, headers: response.headers }
+            })
     }
 
     public updated(user: User): Promise<any> {
         return axiosInstace.patch(`/users/${user.id}/delete`, user)
     }
 
-    public remove(userId: string){
-        return axiosInstace.delete(`/user/${userId}/delete`)
+    public remove(userId: string) {
+        console.log('serviço remover', userId)
+        return axiosInstace.delete(`/users/${userId}`)
     }
 
     public getZipCode(zip_code: string): Promise<any> {

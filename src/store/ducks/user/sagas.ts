@@ -59,6 +59,7 @@ function* updated(action: IActionType) {
 function* remove(action: IActionType) {
     try {
         const { userIdForRemove } = action.payload
+        console.log('sagas', userIdForRemove)
         yield apply(usersService, usersService.remove, [userIdForRemove])
         yield put<any>(removeUserSucess())
     } catch (err) {

@@ -1,40 +1,6 @@
 {
   "users": [
     {
-      "id": "e9lu05flmi",
-      "created_at": "2021-01-27T12:55:43.894Z",
-      "updated_at": "",
-      "first_name": "Lillian",
-      "last_name": "Schmeler",
-      "email": "Carleton14@yahoo.com",
-      "phone": "418-858-6031",
-      "birth_date": "2021-01-27T12:55:43.894Z",
-      "address": {
-        "street": "Olson Overpass",
-        "zip_code": "20852-9485",
-        "city": "East Osborne",
-        "number": 743,
-        "state": "Illinois"
-      }
-    },
-    {
-      "id": "1d7q3o1zqc",
-      "created_at": "2021-01-27T12:55:43.894Z",
-      "updated_at": "",
-      "first_name": "Dion",
-      "last_name": "Littel",
-      "email": "Angelita.Fadel@gmail.com",
-      "phone": "584-828-3950",
-      "birth_date": "2021-01-27T12:55:43.894Z",
-      "address": {
-        "street": "Emmett Ferry",
-        "zip_code": "29638-2333",
-        "city": "Efrentown",
-        "number": 625,
-        "state": "Wyoming"
-      }
-    },
-    {
       "id": "bxae975jn6",
       "created_at": "2021-01-27T12:55:43.894Z",
       "updated_at": "",
@@ -69,23 +35,6 @@
       }
     },
     {
-      "id": "2atnop0xizk",
-      "created_at": "2021-01-27T12:55:43.895Z",
-      "updated_at": "",
-      "first_name": "Jailyn",
-      "last_name": "Hackett",
-      "email": "Casimir53@gmail.com",
-      "phone": "254-521-3320",
-      "birth_date": "2021-01-27T12:55:43.895Z",
-      "address": {
-        "street": "Tyra Highway",
-        "zip_code": "45842",
-        "city": "New Deja",
-        "number": 448,
-        "state": "Montana"
-      }
-    },
-    {
       "id": "vsc008zkah",
       "created_at": "2021-01-27T12:55:43.895Z",
       "updated_at": "",
@@ -100,23 +49,6 @@
         "city": "Walshville",
         "number": 795,
         "state": "New Hampshire"
-      }
-    },
-    {
-      "id": "1og36mxz4i",
-      "created_at": "2021-01-27T12:55:43.895Z",
-      "updated_at": "",
-      "first_name": "Harvey",
-      "last_name": "Corkery",
-      "email": "Retha_Sauer@gmail.com",
-      "phone": "931-325-5037",
-      "birth_date": "2021-01-27T12:55:43.895Z",
-      "address": {
-        "street": "Orin Bridge",
-        "zip_code": "17442-0505",
-        "city": "Johathanberg",
-        "number": 854,
-        "state": "Illinois"
       }
     },
     {
@@ -137,57 +69,6 @@
       }
     },
     {
-      "id": "hhj01ugq3g",
-      "created_at": "2021-01-27T12:55:43.895Z",
-      "updated_at": "",
-      "first_name": "Marcus",
-      "last_name": "Homenick",
-      "email": "Madge.Dach@gmail.com",
-      "phone": "256-822-2607",
-      "birth_date": "2021-01-27T12:55:43.895Z",
-      "address": {
-        "street": "Kylee Viaduct",
-        "zip_code": "20679",
-        "city": "New Golden",
-        "number": 348,
-        "state": "Wyoming"
-      }
-    },
-    {
-      "id": "nssoi7hlyh",
-      "created_at": "2021-01-27T12:55:43.895Z",
-      "updated_at": "",
-      "first_name": "Elouise",
-      "last_name": "Cronin",
-      "email": "Rosanna_Funk46@gmail.com",
-      "phone": "640-270-3768",
-      "birth_date": "2021-01-27T12:55:43.895Z",
-      "address": {
-        "street": "Ebba Square",
-        "zip_code": "37319-4097",
-        "city": "Leonberg",
-        "number": 83,
-        "state": "Michigan"
-      }
-    },
-    {
-      "id": "hd5mrc4q9t",
-      "created_at": "2021-01-27T12:55:43.895Z",
-      "updated_at": "",
-      "first_name": "Gia",
-      "last_name": "Howe",
-      "email": "Bertrand_Gerhold86@yahoo.com",
-      "phone": "892-433-2019",
-      "birth_date": "2021-01-27T12:55:43.895Z",
-      "address": {
-        "street": "Bahringer Spurs",
-        "zip_code": "73671",
-        "city": "Harveyville",
-        "number": 639,
-        "state": "Maryland"
-      }
-    },
-    {
       "id": "bczkc3tfiv",
       "created_at": "2021-01-27T12:55:43.895Z",
       "updated_at": "",
@@ -202,23 +83,6 @@
         "city": "Lake Maureenhaven",
         "number": 118,
         "state": "Vermont"
-      }
-    },
-    {
-      "id": "6jvq9uvik6",
-      "created_at": "2021-01-27T12:55:43.897Z",
-      "updated_at": "",
-      "first_name": "Jaquan",
-      "last_name": "Yundt",
-      "email": "Lillian57@gmail.com",
-      "phone": "934-230-5697",
-      "birth_date": "2021-01-27T12:55:43.897Z",
-      "address": {
-        "street": "Toney Forest",
-        "zip_code": "74644-4160",
-        "city": "West Jennyferbury",
-        "number": 662,
-        "state": "Illinois"
       }
     },
     {
@@ -290,23 +154,6 @@
       }
     },
     {
-      "id": "pjv0x453hj",
-      "created_at": "2021-01-27T12:55:43.897Z",
-      "updated_at": "",
-      "first_name": "Luther",
-      "last_name": "Kunze",
-      "email": "Ebba.Heathcote51@gmail.com",
-      "phone": "631-379-1520",
-      "birth_date": "2021-01-27T12:55:43.897Z",
-      "address": {
-        "street": "Schneider Islands",
-        "zip_code": "36011-3766",
-        "city": "East Coleside",
-        "number": 404,
-        "state": "Georgia"
-      }
-    },
-    {
       "id": "jywpbm74el",
       "created_at": "2021-01-27T12:55:43.897Z",
       "updated_at": "",
@@ -321,40 +168,6 @@
         "city": "Baumbachstad",
         "number": 323,
         "state": "Idaho"
-      }
-    },
-    {
-      "id": "gd6hydu1ih",
-      "created_at": "2021-01-27T12:55:43.897Z",
-      "updated_at": "",
-      "first_name": "Sigrid",
-      "last_name": "Connelly",
-      "email": "Keven.Harvey24@hotmail.com",
-      "phone": "572-244-2626",
-      "birth_date": "2021-01-27T12:55:43.897Z",
-      "address": {
-        "street": "Nolan Bypass",
-        "zip_code": "56223-3020",
-        "city": "Karineview",
-        "number": 913,
-        "state": "Illinois"
-      }
-    },
-    {
-      "id": "2je5i5jz4i",
-      "created_at": "2021-01-27T12:55:43.897Z",
-      "updated_at": "",
-      "first_name": "Letitia",
-      "last_name": "Thiel",
-      "email": "Ansel_Hermiston@yahoo.com",
-      "phone": "469-513-5260",
-      "birth_date": "2021-01-27T12:55:43.897Z",
-      "address": {
-        "street": "Leone Springs",
-        "zip_code": "20545",
-        "city": "Lucianobury",
-        "number": 172,
-        "state": "New Hampshire"
       }
     },
     {
@@ -406,23 +219,6 @@
         "city": "East Raheem",
         "number": 975,
         "state": "Virginia"
-      }
-    },
-    {
-      "id": "9uj7fupvd",
-      "created_at": "2021-01-27T12:55:43.898Z",
-      "updated_at": "",
-      "first_name": "Jeanette",
-      "last_name": "Reichel",
-      "email": "Margarete.Mraz95@gmail.com",
-      "phone": "753-331-2227",
-      "birth_date": "2021-01-27T12:55:43.898Z",
-      "address": {
-        "street": "Maude Fort",
-        "zip_code": "96989",
-        "city": "Stephaniaburgh",
-        "number": 464,
-        "state": "Alabama"
       }
     }
   ]

@@ -81,7 +81,7 @@ const reducer: Reducer<IUserState> = (state: IUserState = INITIAL_STATE, action:
                     sucess: true,
                 }
             }
-            
+
         case UserActionTypes.CREATE_FAILURE:
             const { error: createError } = action.payload
             return {
@@ -103,7 +103,7 @@ const reducer: Reducer<IUserState> = (state: IUserState = INITIAL_STATE, action:
             }
 
         case UserActionTypes.FIND_SUCESS:
-            const { user: findUser} = action.payload
+            const { user: findUser } = action.payload
             return {
                 ...state,
                 createUser: {
@@ -157,6 +157,37 @@ const reducer: Reducer<IUserState> = (state: IUserState = INITIAL_STATE, action:
                 listUsers: {
                     ...state.listUsers,
                     loading: false,
+                    error: true
+                }
+            }
+
+        case UserActionTypes.REMOVE_REQUEST:
+            const { userIdForRemove: idRemove } = action.payload
+            console.log('reducer', idRemove)
+            return {
+                ...state,
+                removeUser: {
+                    ...state.removeUser,
+                    userIdForRemove: idRemove,
+                    loading: true
+                }
+            }
+
+        case UserActionTypes.REMOVE_SUCESS:
+            return {
+                ...state,
+                removeUser: {
+                    ...state.removeUser,
+                    loading: false,
+                    success: true
+                }
+            }
+
+        case UserActionTypes.REMOVE_FAILURE:
+            return {
+                ...state,
+                removeUser: {
+                    ...state.removeUser,
                     error: true
                 }
             }
