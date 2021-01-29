@@ -49,11 +49,11 @@ export const loadUsersFailure = (error: ErrorEvent) => action(UserActionTypes.LO
 
 /* Actions for update Users */
 
-export const updateUserRequest = (user: User) => action(UserActionTypes.UPDATE_REQUEST, { user })
+export const updatedUserRequest = (user: User) => action(UserActionTypes.UPDATED_REQUEST, { user })
 
-export const updateUserSucess = (user: User) => action(UserActionTypes.UPDATE_SUCESS, { user })
+export const updatedUserSucess = (user: User) => action(UserActionTypes.UPDATED_SUCESS, { user })
 
-export const updateUserFailure = (error: ErrorEvent) => action(UserActionTypes.UPDATE_FAILURE, { error })
+export const updatedUserFailure = (error: ErrorEvent) => action(UserActionTypes.UPDATED_FAILURE, { error })
 
 /* Actions for remove Users */
 
@@ -64,5 +64,4 @@ export const removeUserSucess = () => [
     loadUsersRequest()
 ]
 
-// TODO removeUserFailure
-export const removeUSerFailure = (error: ErrorEvent) => action(UserActionTypes.REMOVE_FAILURE, { error })
+export const removeUserFailure = (error: ErrorEvent) => action(UserActionTypes.REMOVE_FAILURE, { error })

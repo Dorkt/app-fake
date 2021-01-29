@@ -33,8 +33,7 @@ export default class User extends Default {
     }
 
     set last_name(value: string | undefined) {
-        // TODO first_name ??
-        this._first_name = value
+        this._last_name = value
     }
 
     get email(): string | undefined {
@@ -72,30 +71,17 @@ export default class User extends Default {
     public fromJSON(json: any): User {
         super.fromJSON(json)
 
-        // TODO * refatorar (Exemplo na classe Default)
-        if (json.first_name !== undefined) {
-            this.first_name = json.first_name
-        }
+        if (json.first_name !== undefined) this.first_name = json.first_name
 
-        if (json.last_name !== undefined) {
-            this.last_name = json.last_name
-        }
+        if (json.last_name !== undefined) this.last_name = json.last_name
 
-        if (json.email !== undefined) {
-            this.email = json.email
-        }
+        if (json.email !== undefined) this.email = json.email
 
-        if (json.phone !== undefined) {
-            this.phone = json.phone
-        }
+        if (json.phone !== undefined) this.phone = json.phone
 
-        if (json.birth_date !== undefined) {
-            this.birth_date = json.birth_date
-        }
-
-        if (json.address !== undefined) {
-            this.address = new Address().fromJSON(json.address)
-        }
+        if (json.birth_date !== undefined) this.birth_date = json.birth_date
+        
+        if (json.address !== undefined) this.address = new Address().fromJSON(json.address)        
 
         return this
     }

@@ -29,8 +29,8 @@ export default class Address {
 
     set city(value: string | undefined) {
         this._city = value;
-    } // TODO ????
-    adress
+    } 
+
     get number(): number | undefined {
         return this._number;
     }
@@ -58,26 +58,16 @@ export default class Address {
             }
             json = JSON.parse(json);
         }
-        // TODO * refatorar
-        if (json.street !== undefined) {
-            this.street = json.street;
-        }
+        
+        if (json.street !== undefined) this.street = json.street;
 
-        if (json.zip_code !== undefined) {
-            this.zip_code = json.zip_code;
-        }
+        if (json.zip_code !== undefined) this.zip_code = json.zip_code;
 
-        if (json.city !== undefined) {
-            this.city = json.city;
-        }
+        if (json.city !== undefined) this.city = json.city;
 
-        if (json.number !== undefined) {
-            this.number = json.number;
-        }
+        if (json.number !== undefined) this.number = json.number;
 
-        if (json.state !== undefined) {
-            this.state = json.state;
-        }
+        if (json.state !== undefined) this.state = json.state;
 
         return this;
     }

@@ -71,8 +71,6 @@ class ListAdmins extends Component<Props> {
         const {
             users
         } = this.props
-        // TODO remover consoles
-        console.log('users', users)
         return <div>
             {users.map((user) => {
                 return <li>{user.first_name}</li>

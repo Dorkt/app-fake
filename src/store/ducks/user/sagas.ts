@@ -8,10 +8,10 @@ import {
     findUserSucess,
     loadUsersFailure,
     loadUsersSucess,
-    removeUSerFailure,
+    removeUserFailure,
     removeUserSucess,
-    updateUserFailure,
-    updateUserSucess
+    updatedUserFailure,
+    updatedUserSucess
 } from './actions'
 import { IActionType } from '../root.types'
 import { UserActionTypes } from './types'
@@ -46,13 +46,13 @@ function* getById(action: IActionType) {
     }
 }
 
-function* update(action: IActionType) {
+function* updated(action: IActionType) {
     try {
         const { user } = action.payload
-        const response: User = yield apply(usersService, usersService.update, [user])
-        yield put<any>(updateUserSucess(response))
+        const response: User = yield apply(usersService, usersService.updated, [user])
+        yield put<any>(updatedUserSucess(response))
     } catch (err) {
-        yield put(updateUserFailure(err))
+        yield put(updatedUserFailure(err))
     }
 }
 
@@ -62,7 +62,7 @@ function* remove(action: IActionType) {
         yield apply(usersService, usersService.remove, [userIdForRemove])
         yield put<any>(removeUserSucess())
     } catch (err) {
-        yield put(removeUSerFailure(err))
+        yield put(removeUserFailure(err))
     }
 }
 
@@ -75,7 +75,7 @@ export default function* userSaga() {
          * getById - FIND_REQUEST
          */
         takeLatest(UserActionTypes.LOAD_USERS_REQUEST, getById),
-        takeLatest(UserActionTypes.UPDATE_REQUEST, update),
+        takeLatest(UserActionTypes.UPDATED_REQUEST, updated),
         takeLatest(UserActionTypes.REMOVE_REQUEST, remove)
     ])
 }

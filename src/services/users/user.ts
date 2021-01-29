@@ -30,13 +30,11 @@ class UserService {
         }
         return axiosInstace.get(`/users`, { params })
         .then(response => {
-            // TODO remover consoles
-            console.log("Service", response.data)
             return { data: response.data, headers: response.headers }
         })
     }
 
-    public update(user: User): Promise<any> {
+    public updated(user: User): Promise<any> {
         return axiosInstace.patch(`/users/${user.id}/delete`, user)
     }
 
