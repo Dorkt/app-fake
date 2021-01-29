@@ -2,13 +2,10 @@ import React, { Component } from 'react'
 import { RouteComponentProps, withRouter } from 'react-router-dom'
 import { bindActionCreators, Dispatch } from 'redux'
 import { connect } from 'react-redux'
-
-import User from '../../store/application/models/users/user'
-import { IApplicationState } from '../../store'
-import * as UserActions from '../../store/ducks/user/actions'
-import { IPaginator, ISearch } from '../../store/ducks/root.types'
+import clsx from 'clsx'
 
 /* Importações do material-ui */
+/* TODO Colocar todas as importações juntas */
 import { WithStyles, Theme, createStyles, makeStyles, withStyles } from '@material-ui/core/styles'
 import Table from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'
@@ -16,20 +13,38 @@ import TableCell from '@material-ui/core/TableCell'
 import TableContainer from '@material-ui/core/TableContainer'
 import TableHead from '@material-ui/core/TableHead'
 import Papper from '@material-ui/core/Paper'
+import { Container, Grid, Paper, TableRow } from '@material-ui/core'
+import { grey } from '@material-ui/core/colors'
 
-const StyledTableCell = withStyles((theme: Theme) => 
-    createStyles({
-        head: {
-            backgroundColor: theme.palette.common.black,
-            color: theme.palette.common.white,
-        },
-        body: {
-            fontSize: 16,
-        },
-    }),
-)(TableCell)
+import User from '../../store/application/models/users/user'
+import { IApplicationState } from '../../store'
+import * as UserActions from '../../store/ducks/user/actions'
+import { IPaginator, ISearch } from '../../store/ducks/root.types'
 
-interface IState {
+const Styles = (theme: Theme): any => createStyles({
+
+    boxTable: {
+        maxWidth: "100%"
+    },
+
+    tableColor: {
+        backgroundColor: '#000000',
+    },
+
+    tableHead: {
+        color: 'red',
+        backgroundColor: "#000000",
+    },
+
+    tableCell: {
+        textAlign: 'center'
+    },
+})
+
+
+
+
+interface IState extends WithStyles<typeof Styles> {
     readonly users: User[]
     readonly loading: boolean
     readonly success: boolean
@@ -41,25 +56,18 @@ interface IDispatchProps extends RouteComponentProps<any> {
 
     changePaginator(paginator: IPaginator): void
 
-    /**
-     * TODO A action tem que ser exatamente igual está no arquivo de actions
-     */
-    changeRemoveDialog(visibilityModal: boolean, userIdForRemove: string): void
+    changeRemoveDialog(visibilityModal: boolean, userIdForRemove?: string): void
 
     removeUserRequest(userIdForRemove: string): void
 
-    loadUsersRequest(paginator: IPaginator): void
-
-    changeDialog(dialog: boolean): void
+    loadUsersRequest(paginator?: IPaginator): void
 
     changeUser(user: User): void
-
-    changeSearchPaginator(search: ISearch): void
 }
 
 type Props = IState & IDispatchProps
 
-class ListAdmins extends Component<Props> {
+class ListUsers extends Component<Props> {
 
     constructor(props: Props) {
         super(props)
@@ -69,13 +77,50 @@ class ListAdmins extends Component<Props> {
 
     public render() {
         const {
-            users
+            users,
+            classes
         } = this.props
-        return <div>
-            {users.map((user) => {
-                return <li>{user.first_name}</li>
-            })}
-        </div>
+
+        return (
+            <Grid container={true}>
+                <Grid item={true} xs={12} >
+                    <TableContainer component={Paper} className={classes.container}>
+                        <Table className={classes.boxTable}>
+                            <TableHead className={classes.tableHead}>
+                                <TableRow>
+                                    <TableCell className={classes.tableCell}>First name</TableCell>
+                                    <TableCell className={classes.tableCell}>Last name</TableCell>
+                                    <TableCell className={classes.tableCell}>Email Address</TableCell>
+                                    <TableCell className={classes.tableCell}>Phone</TableCell>
+                                    <TableCell className={classes.tableCell}>Street of Address</TableCell>
+                                    <TableCell className={classes.tableCell}>Options</TableCell>
+                                </TableRow>
+                            </TableHead>
+                            <TableBody>
+                                {users.map((user: User) => (
+                                    <TableRow>
+                                        <TableCell className={classes.tableCell}>{user.first_name}</TableCell>
+                                        <TableCell className={classes.tableCell}>{user.last_name}</TableCell>
+                                        <TableCell className={classes.tableCell}>{user.email}</TableCell>
+                                        <TableCell className={classes.tableCell}>{user.phone}</TableCell>
+                                        <TableCell className={classes.tableCell}>{user.address?.street}</TableCell>
+                                        <TableCell className={classes.tableCell}>
+                                            <button>edit</button> 
+                                            <button>delete</button>
+                                        </TableCell>
+                                    </TableRow>
+                                ))}
+                            </TableBody>
+                            <TableCell className={classes.tableCell}>
+
+                            </TableCell>
+
+                        </Table>
+
+                    </TableContainer>
+                </Grid>
+            </Grid>
+        )
     }
 }
 
@@ -87,6 +132,8 @@ const mapStateToProps = (state: IApplicationState) => ({
     error: state.users.listUsers.error
 })
 
+const UsersStyles = withStyles<any>(Styles, { withTheme: true })(ListUsers)
+
 const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators(UserActions, dispatch)
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ListAdmins))
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(UsersStyles))

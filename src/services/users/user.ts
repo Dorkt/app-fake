@@ -9,8 +9,7 @@ class UserService {
      * TODO configurar corretamente todas as rotas
      */
     public create(newUser: User) {
-        return axiosInstace.post(`/user/create`, newUser)
-        return axiosInstace.post(`/gym/user/create`, newUser?.toJSON)
+        return axiosInstace.post(`/user/create`, newUser?.toJSON())
     }
 
     public getById(userId: string): Promise<any> {

@@ -70,11 +70,7 @@ export default function* userSaga() {
     return yield all([
         takeLatest(UserActionTypes.CREATE_REQUEST, create),
         takeLatest(UserActionTypes.LOAD_USERS_REQUEST, getAll),
-        /**
-         * TODO getAll e getById disparando a LOAD_USERS_REQUEST
-         * getById - FIND_REQUEST
-         */
-        takeLatest(UserActionTypes.LOAD_USERS_REQUEST, getById),
+        takeLatest(UserActionTypes.FIND_REQUEST, getById),
         takeLatest(UserActionTypes.UPDATED_REQUEST, updated),
         takeLatest(UserActionTypes.REMOVE_REQUEST, remove)
     ])

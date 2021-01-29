@@ -10,11 +10,6 @@ export default class User extends Default {
     private _birth_date: string | undefined
     private _address: Address | undefined
 
-    /**
-     * TODO Inicialização do tipo Objeto
-     * Contructor() {} adicionado pois é do tipo Object (Address)
-     * Apesar de também ser do tipo undefined é interessante inicializar com o tipo
-     */
     constructor() {
         super()
         this._address = new Address()

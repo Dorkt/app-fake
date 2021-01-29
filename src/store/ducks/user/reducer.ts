@@ -81,16 +81,9 @@ const reducer: Reducer<IUserState> = (state: IUserState = INITIAL_STATE, action:
                     sucess: true,
                 }
             }
-
-        /**
-         * TODO padronizar
-         * const { error: createError } = action.payload
-         * O exemplo a cima muda o nome do error (payload) para createError
-         * Apenas para os payloads com o mesmo nome
-         * Perguntar em caso de dúvida
-         */
+            
         case UserActionTypes.CREATE_FAILURE:
-            const createError = action.payload.error
+            const { error: createError } = action.payload
             return {
                 ...state,
                 createUser: {
@@ -110,7 +103,7 @@ const reducer: Reducer<IUserState> = (state: IUserState = INITIAL_STATE, action:
             }
 
         case UserActionTypes.FIND_SUCESS:
-            const findUser = action.payload.user
+            const { user: findUser} = action.payload
             return {
                 ...state,
                 createUser: {
@@ -121,7 +114,7 @@ const reducer: Reducer<IUserState> = (state: IUserState = INITIAL_STATE, action:
             }
 
         case UserActionTypes.FIND_FAILURE:
-            const findError = action.payload.error
+            const { error: findError } = action.payload
             return {
                 ...state,
                 createUser: {
