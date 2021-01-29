@@ -20,6 +20,8 @@ export const changeRemoveDialog = (visibilityModal: boolean, usedIdForRemove?: s
     usedIdForRemove
 })
 
+export const changeUpdatedDialog = (visibilityDialog: boolean) => action(UserActionTypes.CHANGE_UPDATED_DIALOG, { visibilityDialog })
+
 /* Actions for Create User */
 export const createUserRequest = (user: User) => [
     action(UserActionTypes.CREATE_REQUEST, { user }),

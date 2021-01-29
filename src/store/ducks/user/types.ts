@@ -9,6 +9,7 @@ export enum UserActionTypes {
     CHANGE_PAGINATOR = '@users/CHANGE_PAGINATOR',
     CHANGE_SEARCH_PAGINATOR = '@users/CHANGE_SEARCH_PAGINATOR',
     CHANGE_REMOVE_DIALOG = '@users/CHANGE_REMOVE_DIALOG',
+    CHANGE_UPDATED_DIALOG = '@users/CHANGE_UPDATED_DIALOG',
     
     CREATE_REQUEST = '@users/CREATE_REQUEST',
     CREATE_SUCESS = '@users/CREATE_SUCESS',
@@ -33,6 +34,7 @@ export enum UserActionTypes {
 
 interface ICreateState extends IComponentState {
     readonly user: User
+    readonly visibilityDialog: boolean
     readonly data: ErrorEvent
 }
 

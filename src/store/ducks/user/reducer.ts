@@ -5,6 +5,7 @@ import User from '../../application/models/users/user'
 export const INITIAL_STATE: IUserState = {
     createUser: {
         user: new User(),
+        visibilityDialog: false,
         data: new ErrorEvent(''),
         loading: false,
         error: false,
@@ -68,6 +69,14 @@ const reducer: Reducer<IUserState> = (state: IUserState = INITIAL_STATE, action:
                 ...state,
                 removeUser: { ...state.removeUser, visibilityModal, userIdForRemove }
             }
+        
+        case UserActionTypes.CHANGE_UPDATED_DIALOG: 
+            const { visibilityDialog } = action.payload
+            return {
+                ...state,
+                createUser: { ...state.createUser, visibilityDialog }
+            }
+            
 
         case UserActionTypes.CREATE_REQUEST:
             return { ...state, createUser: { ...state.createUser, loading: true } }
@@ -163,7 +172,6 @@ const reducer: Reducer<IUserState> = (state: IUserState = INITIAL_STATE, action:
 
         case UserActionTypes.REMOVE_REQUEST:
             const { userIdForRemove: idRemove } = action.payload
-            console.log('reducer', idRemove)
             return {
                 ...state,
                 removeUser: {
